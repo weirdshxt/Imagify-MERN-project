@@ -1,5 +1,5 @@
-import React from 'react'
-import { assets } from '../assets/assets'
+import React from "react";
+import { assets } from "../assets/assets";
 import { delay, motion } from "motion/react";
 
 const Description = () => {
@@ -44,6 +44,6 @@ const Description = () => {
       </div>
     </motion.div>
   );
-}
+};
 
-export default Description
+export default Description;

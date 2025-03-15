@@ -4,8 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 
 const Navbar = () => {
- 
-    const {user, setShowLogin, logout, credit } = useContext(AppContext)
+  const { user, setShowLogin, logout, credit } = useContext(AppContext);
 
   const navigate = useNavigate();
 
@@ -17,7 +16,10 @@ const Navbar = () => {
       <div>
         {user ? (
           <div className="flex items-center gap-2 sm:gap-3 ">
-            <button onClick={()=>navigate('/buy')} className="flex items-center gap-2 bg-blue-100 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full hover:scale-103 transition-all duration-500">
+            <button
+              onClick={() => navigate("/buy")}
+              className="flex items-center gap-2 bg-blue-100 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full hover:scale-103 transition-all duration-500"
+            >
               <img className="w-5" src={assets.credit_star} alt="" />
               <p className="text-xs sm:text-sm font-medium text-gray-600">
                 Credits Left: {credit}
@@ -32,7 +34,12 @@ const Navbar = () => {
               />
               <div className="absolute hidden group-hover:block top-0 right-0 z-10 text-black rounded pt-12">
                 <ul className="list-none m-0 p-2 bg-white rounded-md border text-sm">
-                  <li onClick={logout} className="py-1 px- cursor-pointer pr-10">Logout</li>
+                  <li
+                    onClick={logout}
+                    className="py-1 px- cursor-pointer pr-10"
+                  >
+                    Logout
+                  </li>
                 </ul>
               </div>
             </div>
@@ -42,7 +49,10 @@ const Navbar = () => {
             <p onClick={() => navigate("/buy")} className="cursor-pointer">
               Pricing
             </p>
-            <button onClick={() => setShowLogin(true)} className="bg-zinc-800 text-white px-7 py-2 sm:px-10 text-sm rounded-full">
+            <button
+              onClick={() => setShowLogin(true)}
+              className="bg-zinc-800 text-white px-7 py-2 sm:px-10 text-sm rounded-full"
+            >
               Login
             </button>
           </div>

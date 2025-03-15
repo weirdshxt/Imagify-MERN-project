@@ -7,24 +7,23 @@ const ResultPage = () => {
   const [image, setImage] = useState(assets.sample_img_2);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
-  const {generateImage} = useContext(AppContext)
+  const { generateImage } = useContext(AppContext);
 
   let handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
 
-    if(input){
-      const image = await generateImage(input)
-      if(image){
-        setIsImageLoaded(true)
-        setImage(image)
+    if (input) {
+      const image = await generateImage(input);
+      if (image) {
+        setIsImageLoaded(true);
+        setImage(image);
       }
-      setLoading(false)
+      setLoading(false);
     }
-
-  }
+  };
 
   return (
     <motion.form

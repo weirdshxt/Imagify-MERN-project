@@ -30,7 +30,10 @@ const GenerateBtn = () => {
         See the magic. Try now
       </h1>
 
-      <button onClick={handleChange} className="inline-flex items-center gap-2 px-12 py-3 rounded-full bg-black text-white m-auto hover:scale-105 transition-all duration-500">
+      <button
+        onClick={handleChange}
+        className="inline-flex items-center gap-2 px-12 py-3 rounded-full bg-black text-white m-auto hover:scale-105 transition-all duration-500 cursor-pointer"
+      >
         Generate Images
         <img src={assets.star_group} alt="" className="h-6" />
       </button>

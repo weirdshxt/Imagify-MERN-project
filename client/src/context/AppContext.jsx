@@ -18,7 +18,7 @@ export const AppProvider = (props) => {
      const backendUrl = import.meta.env.VITE_BACKEND_URL
      const navigate = useNavigate()
 
-     const loadCreditsData = async ()=>{
+     const loadCreaditsData = async ()=>{
         try {
             const {data} = await axios.get(backendUrl + '/api/user/credits', {headers: {token}})
 
@@ -38,11 +38,11 @@ export const AppProvider = (props) => {
            const {data} = await axios.post(backendUrl + '/api/image/generate-image', {prompt}, {headers: {token}})
             
            if(data.success){
-            loadCreditsData()
+            loadCreaditsData()
             return data.resultImage
            }else{
-            toast.error(data.message)
-            loadCreditsData()
+               toast.error(data.message)
+               loadCreaditsData()
             if(data.creditBalance === 0){
                 navigate('/buy')
             }
@@ -62,7 +62,7 @@ export const AppProvider = (props) => {
 
      useEffect(()=>{
         if(token){
-            loadCreditsData()
+            loadCreaditsData()
         }
      },[token])
 
@@ -76,7 +76,7 @@ export const AppProvider = (props) => {
         setToken,
         credit,
         setCredit,
-        loadCreditsData,
+        loadCreaditsData,
         logout,
         generateImage
      }
