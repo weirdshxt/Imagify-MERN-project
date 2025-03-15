@@ -29,10 +29,18 @@ const Navbar = () => {
             <div className="relative group">
               <img
                 src={assets.profile_icon}
-                className="w-10 drop-shadow"
+                className="w-10 drop-shadow cursor-pointer"
                 alt=""
+                onClick={(e) => {
+                  e.stopPropagation();
+                  const menu = e.currentTarget.nextElementSibling;
+                  menu.classList.toggle('hidden');
+                }}
               />
-              <div className="absolute hidden group-hover:block top-0 right-0 z-10 text-black rounded pt-12">
+              <div 
+                className="absolute hidden top-0 right-0 z-10 text-black rounded pt-12 group-hover:block"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <ul className="list-none m-0 p-2 bg-white rounded-md border text-sm">
                   <li
                     onClick={logout}
